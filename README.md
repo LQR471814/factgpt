@@ -235,14 +235,37 @@ ago, but it still remains a prominent failure mode.
 In any case, I am interested in mitigating the sort of "mental
 corruption" effects of AI while still being able to speed up
 mechanical search and lookup. The [system prompt](./prompt.md)
-in this repository is an attempt at doing so. Like any form of
-"prompt engineering", you should take its literal text content
-with a grain of salt, rather focus on the rules it describes and
-perhaps consider alternative ways to enforce those rules
-independently.
+in this repository is an attempt at doing so.
 
 > [!NOTE]
-> I also included a section on [caveman output](https://github.com/JuliusBrussee/caveman) to cut down on
-> "yap", it is not necessary for replicating the expected
-> behavior.
+> Like any form of "prompt engineering", you should take its
+> literal text content with a grain of salt, rather focus on the
+> patterns it describes and perhaps consider deterministic (or
+> more reliable) methods to enforce those rules independently.
+
+> [!NOTE]
+> I also included an additional section based on [caveman](https://github.com/JuliusBrussee/caveman) to
+> cut down on "yap" and reduce output latency, it is not necessary
+> for replicating the expected behavior.
+
+The way it works is very much based on the idea of weaning the
+human off of the "unreliable feedback" which can be AI output.
+Specifically, it attempts to:
+
+- Remove excessive framing, "executive summaries", and "next
+  steps" created by overeager AI. Many of which can be faulty,
+  needlessly extends response length, are often unasked for, and
+  can stop the human from using their brain.
+- Let the AI clearly delineate what information comes from its
+  "training data" and that which comes from the sources it looked
+  up. If this works correctly, this should prevent the human from
+  making judgments based on thin-air.
+- Stop using metaphors or importing terminology from different
+  disciplines.
+- ["Make no mistakes."](https://www.businessinsider.com/claude-cowork-memes-2026-1)
+
+I am very much aware that prompt engineering itself is very faulty
+so this "prompt/skill" is by no means a silver bullet, but I hope
+that it at least tips the scales towards less "mental corruption"
+for the time being.
 

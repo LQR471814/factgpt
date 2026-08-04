@@ -117,9 +117,9 @@ a little bit about what they are doing.
         - ChatGPT 5.6 Sol. `WITHOUT WEB SEARCH OR TOOL CALLING.
           How does the "default" command work in Nushell`
             - This results in "correct" output.
-            - ```
-              default fills missing or null values in record/table column. <input> | default <fallback> <column>
-              ```
+            - `default fills missing or null values in
+              record/table column. <input> | default <fallback>
+              <column>`
         - ChatGPT 5.6 Sol. `WITHOUT WEB SEARCH OR TOOL CALLING.
           How can I set the default value of a nested value in a
           record in nushell`
